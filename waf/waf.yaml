@@ -1,0 +1,7 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/incubateur-ademe/waf-base/main/policy/waf.schema.json
+version: 1
+contacts: []
+rate_limits:
+  # Toutes les requêtes d'une même IP, hors zones ci-dessous.
+  default: { events: 40, window: 1s }
+  zones: []
