@@ -14,8 +14,9 @@ Les règles s'écrivent en SecLang, la syntaxe de la doc CRS sur les exclusions,
 
 Toute modification de ce dossier passe par une PR relue par l'équipe `secops`.
 
-Pour vérifier en local :
+Pour vérifier en local, l'image de base étant privée, on la reconstruit depuis son dépôt public :
 
 ```sh
-docker build --build-arg WAF_BASE=ghcr.io/incubateur-ademe/waf-base:v1 waf/
+docker build -t waf-base:local https://github.com/incubateur-ademe/waf-base.git#main
+docker build --build-arg WAF_BASE=waf-base:local waf/
 ```
